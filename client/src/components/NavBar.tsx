@@ -6,7 +6,7 @@ import logo from "../assets/GetHub-Logo_ALT-Black.png";
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="bg-transparent relative">
+    <header className="bg-white relative">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-4  lg:px-8"
