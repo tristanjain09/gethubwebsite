@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/GetHub-Logo_ALT-Black.png";
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,12 +9,11 @@ const NavBar = () => {
     <header className="bg-transparent relative">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6  lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-4  lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Services</span>
-            <p className="text-4xl flex">Spaceicy</p>
+          <a href="/" className="-m-1.5 p-1.5">
+            <img src={logo} alt="logo" className="w-167px" />
           </a>
         </div>
         <div className="flex lg:hidden">
