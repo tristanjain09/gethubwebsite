@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 // import arrow from "../assets/arrow-pointing-upper-right.svg";
-import deskChair from "../assets/deskwithchair.png";
+import deskChair from "../assets/deskwithchair.jpg";
 import image from "../assets/image.png";
 import cornerOfRoom from "../assets/workplace-arrangement-with-laptop.jpg";
 import chill from "../assets/chill.jpg";
@@ -26,18 +26,17 @@ const HomePage = () => {
   // ];
   return (
     <>
+      <NavBar />
       <div
-        className="relative max-h-[55vh] flex flex-col h-55vh bg-cover bg-center"
+        className="relative max-h-[55vh] flex flex-col h-55vh bg-cover bg-center mt-5"
         style={{ backgroundImage: `url(${deskChair})` }}
       >
         {/*( Overlay) the blur effect */}
-        <div className="absolute inset-0 bg-white/1 backdrop-blur-md"></div>
+        <div className="absolute inset-0 bg-black/1 backdrop-blur-sm"></div>
 
-        <NavBar />
-
-        <div className=" relative z-10 flex-grow flex flex-col bg-opacity-50 w-53vh">
+        <div className=" relative z-10 flex-grow flex flex-col justify-center w-[60.1vh] bg-[#d3d3d3c9]">
           <div className="relative inline-block text-left py-2 px-2 ">
-            <h1 className="text-4xl font-bold text-left leading-tight py-2 px-2">
+            <h1 className="text-4xl font-bold text-left leading-tight py-2 px-2 text-justify">
               Struggling to maximize your business potential with digital
               solutions?
             </h1>
@@ -45,7 +44,7 @@ const HomePage = () => {
                 Discover the workspace
                 <img src={arrow} alt="arrow" className="" />
               </a> */}
-            <p className="py-2 px-2 font-medium">
+            <p className="py-2 px-2 font-medium text-justify">
               Welcome to Gethub, your partner in providing comprehensive IT and
               business services tailored to micro, small, and medium enterprises
               (MSMEs). We offer a wide range of solutions—from shared workspaces
@@ -103,68 +102,74 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex flex-col h-auto justify-center py-10 px-10">
+        <div className="pb-5">
+          <h1 className="text-2xl font-bold text-left leading-tight  ">
+            Why Choose Us
+          </h1>
+          <p className="text-left pt-2 pl-5">
+            At <b>Gethub</b>, we are committed to delivering exceptional service
+            and value. Here’s why businesses choose us:
+          </p>
+        </div>
+
         <Accordion allowMultiple className="bg-black text-white">
           <AccordionItem>
             <h2>
-              <AccordionButton className="!rounded-[0px] ">
+              <AccordionButton className="!rounded-[0px] hover:border-[transparent] focus:outline-none focus-visible:outline-none">
                 <Box
                   as="span"
                   flex="1"
                   textAlign="left"
                   className="p-5 text-lg font-medium"
                 >
-                  Meeting Room
+                  Cost-Effective Services
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              We offer competitive pricing without compromising on quality. Our
+              solutions are designed to deliver maximum value for money.
             </AccordionPanel>
           </AccordionItem>
           <AccordionItem>
             <h2>
-              <AccordionButton className="!rounded-[0px] ">
+              <AccordionButton className="!rounded-[0px] hover:border-[transparent] focus:outline-none focus-visible:outline-none">
                 <Box
                   as="span"
                   flex="1"
                   textAlign="left"
                   className="p-5 text-lg font-medium"
                 >
-                  Working Section
+                  Consulting Expertise
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Our team brings professional advice and custom solutions tailored
+              to your business. No one-size-fits-all approach—just what works
+              for you.
             </AccordionPanel>
           </AccordionItem>
           <AccordionItem>
             <h2>
-              <AccordionButton>
+              <AccordionButton className="!rounded-[0px] hover:border-[transparent] focus:outline-none focus-visible:outline-none">
                 <Box
                   as="span"
                   flex="1"
                   textAlign="left"
                   className="p-5 text-lg font-medium"
                 >
-                  Team Culture
+                  Deep Industry Experience
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              With years of experience supporting MSMEs, we understand the
+              challenges you face. Let our knowledge guide your business to
+              success.
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
@@ -210,13 +215,13 @@ const HomePage = () => {
         <div className="flex flex-col md:flex-row justify-around gap-8 items-center">
           <div className="flex flex-col ">
             <h1 className="text-4xl font-bold text-left leading-tight py-5 ">
-              Lets Colaborate
+              Ready to level up?
             </h1>
             <a
               href="#"
               className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit"
             >
-              Get Started
+              Contact us!
             </a>
           </div>
           <div>
@@ -231,10 +236,10 @@ const HomePage = () => {
 
       <div className="flex flex-row h-auto justify-center py-10 px-10 bg-black text-white justify-around">
         <div className="flex flex-col items-start">
-          <p className="text-base p-1">Spaceicy</p>
+          <p className="text-base p-1">GetHub</p>
           <p className="text-xs p-1 text-left">
-            bringin creative people together and providing the space and support
-            to make connections
+            Let GetHub handle the tech while you focus on strategy and
+            expansion. Let GetHubhelp you take it to the next level!
           </p>
         </div>
         <div className="flex flex-row">
