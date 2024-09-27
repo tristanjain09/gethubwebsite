@@ -1,5 +1,5 @@
 import NavBar from "./NavBar";
-import arrow from "../assets/arrow-pointing-upper-right.svg";
+// import arrow from "../assets/arrow-pointing-upper-right.svg";
 import deskChair from "../assets/deskwithchair.png";
 import image from "../assets/image.png";
 import cornerOfRoom from "../assets/workplace-arrangement-with-laptop.jpg";
@@ -14,7 +14,7 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
-import { MinusIcon } from "@radix-ui/react-icons";
+// import { MinusIcon } from "@radix-ui/react-icons";
 
 const HomePage = () => {
   // const companies = [
