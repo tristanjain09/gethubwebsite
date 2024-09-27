@@ -27,23 +27,37 @@ const HomePage = () => {
   return (
     <>
       <div
-        className="max-h-[55vh] flex flex-col h-55vh bg-cover bg-center"
+        className="relative max-h-[55vh] flex flex-col h-55vh bg-cover bg-center"
         style={{ backgroundImage: `url(${deskChair})` }}
       >
+        {/*( Overlay) the blur effect */}
+        <div className="absolute inset-0 bg-white/1 backdrop-blur-md"></div>
+
         <NavBar />
-        <div className="flex-grow flex flex-col justify-center bg-opacity-50">
-          <h1 className="text-6xl font-bold text-left leading-tight py-5 px-5">
-            Elevate Your
-            <br />
-            Workday at
-            <br />
-            Spaceicy
-          </h1>
-          <div className="relative inline-block text-left py-5 px-5">
-            <a href="#" className="underline text-xl flex">
-              Discover the workspace
-              <img src={arrow} alt="arrow" className="" />
-            </a>
+
+        <div className=" relative z-10 flex-grow flex flex-col bg-opacity-50 w-53vh">
+          <div className="relative inline-block text-left py-2 px-2 ">
+            <h1 className="text-4xl font-bold text-left leading-tight py-2 px-2">
+              Struggling to maximize your business potential with digital
+              solutions?
+            </h1>
+            {/* <a href="#" className="underline text-xl flex">
+                Discover the workspace
+                <img src={arrow} alt="arrow" className="" />
+              </a> */}
+            <p className="py-2 px-2 font-medium">
+              Welcome to Gethub, your partner in providing comprehensive IT and
+              business services tailored to micro, small, and medium enterprises
+              (MSMEs). We offer a wide range of solutions—from shared workspaces
+              to mobile app development—to support your business growth. Whether
+              you need virtual assistance or a physical office, our
+              cost-effective services are designed to meet your unique needs.{" "}
+            </p>
+
+            <p className="py-2 px-2 font-bold">
+              Let GetHub handle the tech while you focus on strategy and
+              expansion. Let us help you take it to the next level!
+            </p>
           </div>
         </div>
       </div>
@@ -52,8 +66,8 @@ const HomePage = () => {
         <div className="flex flex-col md:flex-row justify-between p-5">
           <div className="flex flex-col justify-center bg-opacity-50">
             <h1 className="text-2xl font-bold text-left leading-tight py-5 px-5">
-              For creators to connect,
-              <br /> collaborate, and innovate
+              Supporting business owners looking to expand and those in need of
+              expert IT and workspace solutions.
             </h1>
             <div className="flex flex-col text-left py-5 px-5 items-center md:flex-row">
               <a
