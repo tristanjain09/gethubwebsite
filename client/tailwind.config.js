@@ -19,6 +19,9 @@ module.exports = {
       width: {
         "167px": "167px",
       },
+      boxShadow: {
+        "b-lg": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],
