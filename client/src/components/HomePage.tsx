@@ -185,11 +185,11 @@ const HomePage = () => {
   return (
     <>
       <NavBar />
-      <div className="text-slate-100 relative max-h-[55vh] flex flex-row h-55vh bg-gradient-to-r from-[#000042eb] to-[#0062c1] mt-5 justify-around items-center">
+      <div className="py-7 px-8 text-slate-100 relative flex flex-row bg-gradient-to-r from-[#000042eb] to-[#0062c1] mt-5 justify-around items-center">
         {/*( Overlay) the blur effect */}
         {/* <div className="absolute inset-0 bg-black/1 backdrop-blur-sm"></div> */}
 
-        <div className=" relative z-10 flex-grow flex flex-col justify-center w-[60.1vh] max-w-[60.1vh]">
+        <div className=" relative z-10 flex-grow flex flex-col justify-center w-auto max-w-[55%]">
           <div className="relative inline-block text-left py-2 px-2 ">
             <h1 className="text-2xl font-bold text-left leading-tight py-2 px-2">
               Welcome to Gethub, your trusted partner for comprehensive IT and
@@ -200,7 +200,7 @@ const HomePage = () => {
                 Discover the workspace
                 <img src={arrow} alt="arrow" className="" />
               </a> */}
-            <p className="py-2 px-2 font-medium text-justify">
+            <p className="py-2 px-2 font-medium">
               We provide a wide range of solutions—from shared workspaces and
               virtual assistance to mobile app development and office
               leasing—designed to fuel your business growth. Our services are
@@ -297,7 +297,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex flex-col h-auto justify-center py-10 px-20">
-        <div className="flex justify-center items-center drop-shadow-2xl">
+        <div className="flex justify-center items-center">
           <CardCarousel />
         </div>
         <div className="py-10 px-20 flex flex-col items-start">

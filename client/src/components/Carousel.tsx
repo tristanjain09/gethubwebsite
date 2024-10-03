@@ -124,31 +124,35 @@ const CardCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div
-      className="flex overflow-x-auto overflow-y-hidden space-x-4 p-4 hide-scrollbar w-[700px] h-[600px] items-center"
-      ref={containerRef}
-      onTouchStart={handleTouchStart} // Attach touch start event
-      onTouchEnd={handleTouchEnd} // Attach touch end event
-    >
-      {cardsData.map((card, index) => (
-        <div
-          key={index} // Use index as the key for the duplicated cards
-          className={`flex-none transition-all duration-300 ease-in-out my-auto ${
-            expandedIndex === index ? "w-80" : "w-32" // Use index directly
-          }`}
-          onClick={(event) => handleCardClick(event, index)} // Adjust click handling
-        >
-          <img
-            src={card.imageUrl}
-            alt={card.title}
-            className="w-full h-auto rounded-lg cursor-pointer"
-          />
-          <div className="mt-2">
-            <h2 className="font-bold">{card.title}</h2>
-            <p className="text-gray-500">{card.description}</p>
+    <div className="fade-carousel-container">
+      {" "}
+      {/* Added fade-carousel-container */}
+      <div
+        className="flex overflow-x-auto overflow-y-hidden space-x-4 p-4 hide-scrollbar w-[700px] h-[600px] items-center"
+        ref={containerRef}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {cardsData.map((card, index) => (
+          <div
+            key={index}
+            className={`flex-none transition-all duration-300 ease-in-out my-auto ${
+              expandedIndex === index ? "w-80" : "w-32"
+            }`}
+            onClick={(event) => handleCardClick(event, index)}
+          >
+            <img
+              src={card.imageUrl}
+              alt={card.title}
+              className="w-full h-auto rounded-lg cursor-pointer"
+            />
+            <div className="mt-2">
+              <h2 className="font-bold">{card.title}</h2>
+              <p className="text-gray-500">{card.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

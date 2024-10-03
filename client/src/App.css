@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   width: 120vh;
   margin: 0 auto;
 
@@ -61,4 +61,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.fade-carousel-container {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.fade-carousel-container::before,
+.fade-carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Adjust the width as needed */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 1;
+}
+
+.fade-carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.fade-carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
