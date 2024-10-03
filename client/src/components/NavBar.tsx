@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/GetHub-Logo_ALT-Black.png";
+import telephone from "../assets/telephone.svg";
 import { ErrorImage } from "./HomePage";
 import {
   Modal,
@@ -19,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { ContactForm } from "./HomePage";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -157,16 +159,20 @@ const NavBar = () => {
       }
     }
   }, [form.email, form.name, form.message]);
+
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
   return (
     <>
-      <header className="bg-white relative">
+      <header className="bg-white/90 backdrop-blur-lg sticky top-0 z-50">
         <nav
           aria-label="Global"
-          className="mx-auto flex max-w-7xl items-center justify-between p-4  lg:px-8"
+          className="mx-auto flex max-w-7xl items-center justify-between p-4  lg:px-8 sticky"
         >
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
-              <img src={logo} alt="logo" className="w-167px" />
+              <img src={logo} alt="logo" className="w-167px min-w-[167px]" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -180,30 +186,60 @@ const NavBar = () => {
             </button>
           </div>
 
-          <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          <PopoverGroup className="hidden lg:flex lg:gap-x-8 align-center h-[70px]">
             <a
               href="#"
-              className="rounded-full text-sm font-semibold leading-6 text-gray-900 p-2 hover:bg-gray-200 transition-colors duration-300"
+              className={`relative text-black px-2 py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-900 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left hover:bg-blue-100 hover:bg-opacity-50 font-semibold pt-5 px-4 ${
+                isHomePage
+                  ? "after:scale-x-100 bg-blue-100 bg-opacity-50"
+                  : "after:scale-x-0"
+              }`}
             >
               Home
             </a>
             <a
               href="#"
-              className="rounded-full text-sm font-semibold leading-6 text-gray-900 p-2 hover:bg-gray-200 transition-colors duration-300"
+              className={`relative text-black px-2 py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-900 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left hover:bg-blue-100 hover:bg-opacity-50 font-semibold pt-5 px-4`}
             >
-              About
+              Services
             </a>
             <a
               href="#"
-              className="rounded-full text-sm font-semibold leading-6 text-gray-900 p-2 hover:bg-gray-200 transition-colors duration-300"
+              className={`relative text-black px-2 py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-900 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left hover:bg-blue-100 hover:bg-opacity-50 font-semibold pt-5 px-4`}
             >
-              Pricing
+              Clients
             </a>
+            <a
+              href="#"
+              className={`relative text-black px-2 py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-900 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left hover:bg-blue-100 hover:bg-opacity-50 font-semibold pt-5 px-4`}
+            >
+              Partners
+            </a>
+            <a
+              href="#"
+              className={`relative text-black px-2 py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-900 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left hover:bg-blue-100 hover:bg-opacity-50 font-semibold pt-5 px-4`}
+            >
+              Company
+            </a>
+            <div className="flex flex-row items-center">
+              <div className="p-[10px] rounded-full bg-white mr-1">
+                <img
+                  src={telephone}
+                  alt="telephone"
+                  className="w-[16px] min-w-[16px]"
+                />
+              </div>
+
+              <div className="flex flex-col items-start">
+                <span className="text-sm">Call for more info</span>
+                <span className="font-bold">+63 909 5678 989</span>
+              </div>
+            </div>
           </PopoverGroup>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-center">
             <a
               onClick={onOpen}
-              className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+              className="px-4 py-2 text-white bg-[#000080] text-gray-700 rounded-full hover:bg-opacity-70 transition-colors duration-150 w-fit cursor-pointer"
             >
               Contact
             </a>
@@ -384,7 +420,7 @@ const NavBar = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+                  className="px-4 py-2 text-white bg-[#000080] rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer font-semibold"
                 >
                   {/* Send */}
                   {loading ? "Sending" : "Send"}
@@ -392,7 +428,7 @@ const NavBar = () => {
                 {/* <Button onClick={onClose}>Cancel</Button> */}
                 <a
                   onClick={onClose}
-                  className="px-4 py-2 text-white bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+                  className="px-4 py-2 text-black bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
                 >
                   Cancel
                 </a>

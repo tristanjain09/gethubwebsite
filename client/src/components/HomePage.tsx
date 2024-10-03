@@ -1,10 +1,5 @@
 import NavBar from "./NavBar";
-// import arrow from "../assets/arrow-pointing-upper-right.svg";
 import deskChair from "../assets/deskwithchair.jpg";
-import image from "../assets/image.png";
-import cornerOfRoom from "../assets/workplace-arrangement-with-laptop.jpg";
-import chill from "../assets/chill.jpg";
-import jukebox from "../assets/jukebox.jpg";
 import building from "../assets/anime-flat-building-illustration.png";
 import {
   Accordion,
@@ -28,6 +23,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import errorimage from "/src/assets/circle-exclamation-solid.svg";
+import CardCarousel from "./Carousel";
 
 export const ErrorImage = () => {
   return <img src={errorimage} alt="error" className="w-3 h-3 mr-1.5" />;
@@ -183,83 +179,47 @@ const HomePage = () => {
       }
     }
   }, [form.email, form.name, form.message]);
+
   return (
     <>
       <NavBar />
-      <div
-        className="relative max-h-[55vh] flex flex-col h-55vh bg-cover bg-center mt-5"
-        style={{ backgroundImage: `url(${deskChair})` }}
-      >
+      <div className="py-7 px-8 text-slate-100 relative flex flex-row bg-gradient-to-r from-[#000042eb] to-[#0062c1] mt-5 justify-around items-center">
         {/*( Overlay) the blur effect */}
-        <div className="absolute inset-0 bg-black/1 backdrop-blur-sm"></div>
+        {/* <div className="absolute inset-0 bg-black/1 backdrop-blur-sm"></div> */}
 
-        <div className=" relative z-10 flex-grow flex flex-col justify-center w-[60.1vh] bg-[#d3d3d3c9]">
+        <div className=" relative z-10 flex-grow flex flex-col justify-center w-auto max-w-[55%]">
           <div className="relative inline-block text-left py-2 px-2 ">
-            <h1 className="text-4xl font-bold text-left leading-tight py-2 px-2 text-justify">
-              Struggling to maximize your business potential with digital
-              solutions?
+            <h1 className="text-2xl font-bold text-left leading-tight py-2 px-2">
+              Welcome to Gethub, your trusted partner for comprehensive IT and
+              business services tailored specifically to micro, small, and
+              medium enterprises (MSMEs).
             </h1>
             {/* <a href="#" className="underline text-xl flex">
                 Discover the workspace
                 <img src={arrow} alt="arrow" className="" />
               </a> */}
-            <p className="py-2 px-2 font-medium text-justify">
-              Welcome to Gethub, your partner in providing comprehensive IT and
-              business services tailored to micro, small, and medium enterprises
-              (MSMEs). We offer a wide range of solutions—from shared workspaces
-              to mobile app development—to support your business growth. Whether
-              you need virtual assistance or a physical office, our
-              cost-effective services are designed to meet your unique needs.{" "}
+            <p className="py-2 px-2 font-medium">
+              We provide a wide range of solutions—from shared workspaces and
+              virtual assistance to mobile app development and office
+              leasing—designed to fuel your business growth. Our services are
+              flexible, cost-effective, and customized to meet your unique
+              needs.
             </p>
 
             <p className="py-2 px-2 font-bold">
-              Let GetHub handle the tech while you focus on strategy and
-              expansion. Let us help you take it to the next level!
+              Let Gethub handle the tech, so you can focus on strategy and
+              scaling your business. Partner with us today and take your
+              business to the next level!
             </p>
           </div>
         </div>
+
+        <div
+          className="w-96 h-96 bg-cover bg-center rounded-lg"
+          style={{ backgroundImage: `url(${deskChair})` }}
+        ></div>
       </div>
 
-      <div className="flex flex-col h-auto justify-center py-10 px-20">
-        <div className="flex flex-col md:flex-row justify-between p-5">
-          <div className="flex flex-col justify-center bg-opacity-50">
-            <h1 className="text-2xl font-bold text-left leading-tight py-5 px-5">
-              Supporting business owners looking to expand and those in need of
-              expert IT and workspace solutions.
-            </h1>
-            <div className="flex flex-col text-left py-5 px-5 items-center md:flex-row">
-              <a
-                href="#"
-                className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit"
-              >
-                About us
-              </a>
-              <span className="px-5 text-center md:text-left">
-                Bringing creative people together and providing <br />
-                the space and support to make connections
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center p-5 self-center">
-            <img
-              src={image}
-              alt="image"
-              className="min-w-48 h-24 w-auto rounded-full"
-            />
-          </div>
-        </div>
-
-        <div>
-          <img
-            src={cornerOfRoom}
-            alt="cornerOfRoom"
-            className="w-auto rounded-llg"
-          />
-          <h1 className="text-2xl font-bold text-left leading-tight py-5 ">
-            Corner of the room
-          </h1>
-        </div>
-      </div>
       <div className="flex flex-col h-auto justify-center py-10 px-10">
         <div className="pb-5">
           <h1 className="text-2xl font-bold text-left leading-tight  ">
@@ -271,7 +231,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        <Accordion allowMultiple className="bg-black text-white">
+        <Accordion allowMultiple className="bg-[#000080] text-slate-100">
           <AccordionItem>
             <h2>
               <AccordionButton className="!rounded-[0px] hover:border-[transparent] focus:outline-none focus-visible:outline-none">
@@ -335,25 +295,8 @@ const HomePage = () => {
       </div>
 
       <div className="flex flex-col h-auto justify-center py-10 px-20">
-        <div className="flex flex-col md:flex-row justify-center gap-8">
-          <div>
-            <img
-              src={chill}
-              alt="cornerOfRoom"
-              className="w-auto h-[60vh] rounded-llg"
-            />
-          </div>
-
-          <div className="flex flex-col justify-between">
-            <h1 className="text-4xl font-bold text-left leading-tight p-10 ">
-              Work and Chill
-            </h1>
-            <img
-              src={jukebox}
-              alt="cornerOfRoom"
-              className="w-auto h-[45vh] rounded-llg"
-            />
-          </div>
+        <div className="flex justify-center items-center">
+          <CardCarousel />
         </div>
         <div className="py-10 px-20 flex flex-col items-start">
           <h2 className="text-2xl font-semibold text-gray-900">Collaborate</h2>
@@ -378,7 +321,7 @@ const HomePage = () => {
             </h1>
             <a
               onClick={onOpen}
-              className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+              className="px-4 py-2 text-slate-100 bg-[#000080] text-gray-700 rounded-full hover:bg-opacity-70 transition-colors duration-300 w-fit cursor-pointer"
             >
               Contact us!
             </a>
@@ -393,45 +336,43 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="flex flex-row h-auto justify-center py-10 px-10 bg-black text-white justify-around">
+      <div className="flex flex-col h-auto justify-center py-10 px-10 bg-[#000080] text-slate-100 justify-around">
         <div className="flex flex-col items-start">
           <p className="text-base p-1">GetHub</p>
           <p className="text-xs p-1 text-left">
             Let GetHub handle the tech while you focus on strategy and
-            expansion. Let GetHubhelp you take it to the next level!
+            expansion. Let GetHub help you take it to the next level!
           </p>
         </div>
-        <div className="flex flex-row">
-          <div className="text-xs flex flex-col px-5 items-start">
-            <a href="" className="p-1">
-              Home
-            </a>
-            <a href="" className="p-1">
-              About
-            </a>
-            <a href="" className="p-1">
-              Blog
-            </a>
-            <a href="" className="p-1">
-              Offsite
-            </a>
-          </div>
-          <div className="text-xs flex flex-col px-5 items-start ">
-            <a href="" className="p-1">
-              Instagram
-            </a>
-            <a href="" className="p-1">
-              Twitter
-            </a>
-            <a href="" className="p-1">
-              Youtube
-            </a>
-            <a href="" className="p-1">
-              Tiktok
-            </a>
-          </div>
+        <div className="flex flex-row text-xs pt-5 items-start">
+          <a href="" className="p-1">
+            Home
+          </a>
+          <a href="" className="p-1">
+            About
+          </a>
+          <a href="" className="p-1">
+            Blog
+          </a>
+          <a href="" className="p-1">
+            Offsite
+          </a>
+
+          <a href="" className="p-1">
+            Instagram
+          </a>
+          <a href="" className="p-1">
+            Twitter
+          </a>
+          <a href="" className="p-1">
+            Youtube
+          </a>
+          <a href="" className="p-1">
+            Tiktok
+          </a>
         </div>
       </div>
+
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -524,7 +465,7 @@ const HomePage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-4 py-2 text-white bg-black text-gray-700 rounded-full hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+                  className="px-4 py-2 text-slate-100 bg-[#000080] text-gray-700 rounded-full hover:bg-opacity-70 transition-colors duration-300 w-fit cursor-pointer font-semibold"
                 >
                   {/* Send */}
                   {loading ? "Sending" : "Send"}
@@ -532,7 +473,7 @@ const HomePage = () => {
                 {/* <Button onClick={onClose}>Cancel</Button> */}
                 <a
                   onClick={onClose}
-                  className="px-4 py-2 text-white bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+                  className="px-4 py-2 text-black bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
                 >
                   Cancel
                 </a>
@@ -560,7 +501,7 @@ const HomePage = () => {
           <ModalFooter className="gap-3">
             <a
               onClick={onClose1}
-              className="px-4 py-2 text-white bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
+              className="px-4 py-2 text-slate-100 bg-white text-black rounded-full border border-gray hover:bg-gray-300 transition-colors duration-300 w-fit cursor-pointer"
             >
               Close
             </a>

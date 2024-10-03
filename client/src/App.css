@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   width: 120vh;
   margin: 0 auto;
 
@@ -19,7 +19,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.css-1cjy4zv:focus-visible,
+/* .css-1cjy4zv:focus-visible,
 .css-1cjy4zv[data-focus-visible] {
   border-color: black !important;
   box-shadow: 0 0 0 1px black !important;
@@ -28,7 +28,16 @@
 .css-1msuebi:focus-visible,
 .css-1msuebi[data-focus-visible] {
   border-color: black !important;
-  box-shadow: 0 0 0 1px black !important;
+  box-shadow: 0 0 0 1px black !important; 
+}
+*/
+.hide-scrollbar {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 @keyframes logo-spin {
@@ -52,4 +61,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.fade-carousel-container {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.fade-carousel-container::before,
+.fade-carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Adjust the width as needed */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 1;
+}
+
+.fade-carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.fade-carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
