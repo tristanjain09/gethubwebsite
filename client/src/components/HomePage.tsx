@@ -1,7 +1,5 @@
 import NavBar from "./NavBar";
 import deskChair from "../assets/deskwithchair.jpg";
-import chill from "../assets/chill.jpg";
-import jukebox from "../assets/jukebox.jpg";
 import building from "../assets/anime-flat-building-illustration.png";
 import {
   Accordion,
